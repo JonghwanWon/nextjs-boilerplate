@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
 import { ThemeProvider } from 'styled-components';
 
+import StoreProvider from '~/stores/init';
 import theme, { GlobalStyle } from '~/theme';
 
 // persistent layout
@@ -39,7 +40,9 @@ const MyApp = ({ Component, pageProps }: MyAppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {withLayout(<Component {...pageProps} />, router.query)}
+        <StoreProvider initialData={pageProps.initialData}>
+          {withLayout(<Component {...pageProps} />, router.query)}
+        </StoreProvider>
       </ThemeProvider>
     </>
   );

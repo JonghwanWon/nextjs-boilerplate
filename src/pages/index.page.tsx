@@ -1,13 +1,28 @@
+import { GetServerSideProps } from 'next';
+
 import { getGlobalLayout } from '~/components/Layouts/GlobalLayout';
+import { TRootStore } from '~/stores/RootStore';
+
+import Home from './containers/Home';
 
 type PageProps = {};
 
 const Page: PersistentLayoutNextPage<PageProps> = ({}) => {
-  return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
-  );
+  return <Home />;
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const initialData: DeepPartial<TRootStore> = {
+    sample: {
+      mySsrData: 'server side',
+    },
+  };
+
+  return {
+    props: {
+      initialData,
+    },
+  };
 };
 
 Page.layout = (page) =>
