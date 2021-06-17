@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
 import { ThemeProvider } from 'styled-components';
 
-import StoreProvider from '~/stores/init';
+import StoreProvider from '~/stores';
 import theme, { GlobalStyle } from '~/theme';
 
 // persistent layout

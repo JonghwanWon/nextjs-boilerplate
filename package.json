@@ -1,18 +1,28 @@
 {
   "name": "nextjs-bolierplate",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Jonghwan Won <jh.wwwon@daum.net>",
+  "license": "MIT",
+  "description": "nextjs bolierplate",
+  "keywords": [
+    "nextjs",
+    "mobx-state-tree",
+    "typescript",
+    "styled-components"
+  ],
   "scripts": {
     "dev": "next dev -p ${PORT-3000}",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "eslint-fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "dependencies": {
+    "isomorphic-fetch": "^3.0.0",
     "mobx": "^6.3.2",
     "mobx-react": "^7.2.0",
     "mobx-state-tree": "^5.0.1",
     "nanoid": "^3.1.23",
-    "next": "10.2.3",
+    "next": "11.0.0",
     "polished": "^4.1.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -20,6 +30,7 @@
   },
   "devDependencies": {
     "@babel/runtime-corejs3": "^7.14.6",
+    "@types/isomorphic-fetch": "^0.0.35",
     "@types/node": "^15.6.1",
     "@types/react": "^17.0.11",
     "@types/styled-components": "^5.1.10",
@@ -33,9 +44,6 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.3.1",
-    "stylelint": "^13.13.1",
-    "stylelint-config-idiomatic-order": "^8.1.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.3"
   }
 }

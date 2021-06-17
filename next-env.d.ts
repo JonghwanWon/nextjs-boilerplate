@@ -2,8 +2,6 @@
 
 import * as next from 'next';
 
-import { ThemeInterface } from './src/theme';
-
 declare global {
   type DeepPartial<T> = T extends Array<infer U>
     ? Array<DeepPartial<U>>
@@ -21,8 +19,4 @@ declare global {
   type PersistentLayoutNextPage<P = {}, IP = P> = next.NextPage<P, IP> & {
     layout?: (page: next.NextPage<P, IP>, query: ParsedUrlQuery) => JSX.Element;
   };
-}
-
-declare module 'styled-components' {
-  export interface DefaultTheme extends ThemeInterface {}
 }

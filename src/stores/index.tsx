@@ -66,4 +66,5 @@ export const getStore = function <Selection>(
   );
 };
 
+export type { TRootStore };
 export default StoreProvider;
