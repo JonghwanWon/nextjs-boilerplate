@@ -15,7 +15,6 @@ const Home: FC<HomeProps> = ({}) => {
   return (
     <Container>
       <div>Home</div>
-      <a href="/other">hello</a>
       <p>initial state: {JSON.stringify(sampleStore.mySampleData)}</p>
       <p>server side: {sampleStore.mySsrData}</p>
       <div>{JSON.stringify(userStore.users)}</div>
