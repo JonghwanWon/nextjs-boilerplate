@@ -33,7 +33,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 - Persistent Layout
 
 ```
-~/pages/**/*.page.tsx
+~/pages/**/*.tsx
 
 myPage.layout = (page) => <Layout>{page}</Layout>
 ```
