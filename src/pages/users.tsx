@@ -1,17 +1,23 @@
 import { GetServerSideProps } from 'next';
 
 import { getGlobalLayout } from '~/components/Layouts/GlobalLayout';
-import Home from '~/containers/Home';
+import Users from '~/containers/Users/Users';
+import { fetcher } from '~/helpers/fetcher';
+import { TUser } from '~/models/user';
 import { TRootStore } from '~/stores';
 
 const Page: PersistentLayoutNextPage = ({}) => {
-  return <Home />;
+  return <Users />;
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
+  const resp = await fetcher<TUser[]>(
+    'https://jsonplaceholder.typicode.com/users',
+  );
+
   const initialData: DeepPartial<TRootStore> = {
-    sample: {
-      mySsrData: 'server side',
+    user: {
+      users: resp,
     },
   };
 
@@ -25,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 Page.layout = (page) =>
   getGlobalLayout(page, {
     helmet: {
-      title: 'Home',
+      title: 'Users',
     },
   });
 

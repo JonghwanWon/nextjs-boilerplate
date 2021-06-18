@@ -2,16 +2,18 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
+import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 
+import { useNProgress } from '~/components/NProgress';
 import StoreProvider from '~/stores';
 import theme, { GlobalStyle } from '~/theme';
 
 // persistent layout
 type LayoutRenderFunction = (
-  component: JSX.Element,
+  component: ReactNode,
   query: ParsedUrlQuery,
-) => JSX.Element;
+) => ReactNode;
 const DefaultLayout: LayoutRenderFunction = (page) => <>{page}</>;
 
 type MyAppProps = AppProps & {
@@ -21,6 +23,7 @@ type MyAppProps = AppProps & {
 };
 
 const MyApp = ({ Component, pageProps }: MyAppProps) => {
+  useNProgress();
   const router = useRouter();
 
   // persistent layout

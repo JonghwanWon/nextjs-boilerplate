@@ -1,9 +1,12 @@
 import { normalize } from 'polished';
 import { createGlobalStyle } from 'styled-components';
 
+import { nProgressStyle } from '~/components/NProgress/nProgressStyle';
+
 import colors from './colors';
 
 const GlobalStyle = createGlobalStyle`
+  ${nProgressStyle};
   ${normalize()};
 
   * {

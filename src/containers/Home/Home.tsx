@@ -10,14 +10,12 @@ type HomeProps = {};
 
 const Home: FC<HomeProps> = ({}) => {
   const sampleStore = getStore((stores) => stores.sample);
-  const userStore = getStore((stores) => stores.user);
 
   return (
     <Container>
       <div>Home</div>
       <p>initial state: {JSON.stringify(sampleStore.mySampleData)}</p>
       <p>server side: {sampleStore.mySsrData}</p>
-      <div>{JSON.stringify(userStore.users)}</div>
     </Container>
   );
 };

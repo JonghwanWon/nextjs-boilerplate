@@ -1,6 +1,7 @@
 /// <reference types="next/types/global" />
 
 import * as next from 'next';
+import { ReactNode } from 'react';
 
 declare global {
   type DeepPartial<T> = T extends Array<infer U>
@@ -17,6 +18,6 @@ declare global {
 
   // NextPage with persistent Layout
   type PersistentLayoutNextPage<P = {}, IP = P> = next.NextPage<P, IP> & {
-    layout?: (page: next.NextPage<P, IP>, query: ParsedUrlQuery) => JSX.Element;
+    layout?: (page: next.NextPage<P, IP>, query: ParsedUrlQuery) => ReactNode;
   };
 }
