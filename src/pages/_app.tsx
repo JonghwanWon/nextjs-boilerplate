@@ -4,8 +4,10 @@ import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
 import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { SWRConfig } from 'swr';
 
 import { useNProgress } from '~/components/NProgress';
+import { fetcher } from '~/helpers/fetcher';
 import StoreProvider from '~/stores';
 import theme, { GlobalStyle } from '~/theme';
 
@@ -39,12 +41,18 @@ const MyApp = ({ Component, pageProps }: MyAppProps) => {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
-        <title>loading...</title>
+        <title>{process.env.NEXT_PUBLIC_SEO_SITE_NAME}</title>
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <StoreProvider initialData={pageProps.initialData}>
-          {withLayout(<Component {...pageProps} />, router.query)}
+          <SWRConfig
+            value={{
+              fetcher,
+            }}
+          >
+            {withLayout(<Component {...pageProps} />, router.query)}
+          </SWRConfig>
         </StoreProvider>
       </ThemeProvider>
     </>

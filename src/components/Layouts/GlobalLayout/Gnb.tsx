@@ -37,13 +37,14 @@ const Gnb: FC<GnbProps> = ({}) => {
   const menus: GnbMenu[] = [
     { name: 'Home', route: { href: '/' } },
     { name: 'Users', route: { href: '/users' } },
+    { name: 'Posts', route: { href: '/posts' } },
   ];
   return (
     <Container>
       <Nav>
         <Menus>
           {menus.map((menu) => (
-            <Menu>
+            <Menu key={menu.name}>
               <RouteLink {...menu.route}>{menu.name}</RouteLink>
             </Menu>
           ))}
