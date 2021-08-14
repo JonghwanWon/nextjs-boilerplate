@@ -1,3 +1,7 @@
+const primaryColors = {
+  primary: '#2980b9',
+};
+
 const grayscaleColors = {
   gray900: '#263238',
   gray800: '#424242',
@@ -10,6 +14,7 @@ const grayscaleColors = {
 };
 
 const colors = {
+  ...primaryColors,
   ...grayscaleColors,
 };
 

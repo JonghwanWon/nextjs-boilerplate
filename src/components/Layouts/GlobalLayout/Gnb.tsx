@@ -34,11 +34,7 @@ type GnbMenu = {
 type GnbProps = Record<string, unknown>;
 
 const Gnb: FC<GnbProps> = ({}) => {
-  const menus: GnbMenu[] = [
-    { name: 'Home', route: { href: '/' } },
-    { name: 'Users', route: { href: '/users' } },
-    { name: 'Posts', route: { href: '/posts' } },
-  ];
+  const menus: GnbMenu[] = [{ name: 'Home', route: { href: '/' } }];
   return (
     <Container>
       <Nav>

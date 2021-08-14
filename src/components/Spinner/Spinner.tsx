@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
-import { OneOrAnother } from '~/helpers/utils/typeHelpers';
 import colors, { Colors } from '~/theme/colors';
 
 const rotate = keyframes`
@@ -23,11 +22,10 @@ const Container = styled.div<TContainer>(
   `,
 );
 
-type ColorProps = OneOrAnother<{ tColor?: keyof Colors }, { color?: string }>;
-type SpinnerProps = {} & ColorProps;
+type SpinnerProps = { color?: keyof Colors };
 
-const Spinner: FC<SpinnerProps> = ({ tColor = 'primary', color }) => {
-  const _color = color ?? colors[tColor];
+const Spinner: FC<SpinnerProps> = ({ color = 'primary' }) => {
+  const _color = colors[color];
   return <Container color={_color} />;
 };
 

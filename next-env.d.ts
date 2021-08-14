@@ -1,23 +1,6 @@
+/// <reference types="next" />
 /// <reference types="next/types/global" />
+/// <reference types="next/image-types/global" />
 
-import * as next from 'next';
-import { ReactNode } from 'react';
-
-declare global {
-  type DeepPartial<T> = T extends Array<infer U>
-    ? Array<DeepPartial<U>>
-    : T extends ReadonlyArray<infer U>
-    ? ReadonlyArray<DeepPartial<U>>
-    : T extends {
-        [key in keyof T]: T[key];
-      }
-    ? {
-        [K in keyof T]?: DeepPartial<T[K]>;
-      }
-    : T;
-
-  // NextPage with persistent Layout
-  type PersistentLayoutNextPage<P = {}, IP = P> = next.NextPage<P, IP> & {
-    layout?: (page: next.NextPage<P, IP>, query: ParsedUrlQuery) => ReactNode;
-  };
-}
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.

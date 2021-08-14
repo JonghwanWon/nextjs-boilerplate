@@ -1,7 +1,6 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { ParsedUrlQuery } from 'querystring';
 import { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { SWRConfig } from 'swr';
@@ -13,7 +12,7 @@ import theme, { GlobalStyle } from '~/theme';
 // persistent layout
 type LayoutRenderFunction = (
   component: ReactNode,
-  query: ParsedUrlQuery,
+  query: any,
 ) => ReactNode;
 const DefaultLayout: LayoutRenderFunction = (page) => <>{page}</>;
 
