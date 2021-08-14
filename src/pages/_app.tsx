@@ -8,7 +8,6 @@ import { SWRConfig } from 'swr';
 
 import { useNProgress } from '~/components/NProgress';
 import { fetcher } from '~/helpers/fetcher';
-import StoreProvider from '~/stores';
 import theme, { GlobalStyle } from '~/theme';
 
 // persistent layout
@@ -45,15 +44,13 @@ const MyApp = ({ Component, pageProps }: MyAppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <StoreProvider initialData={pageProps.initialData}>
-          <SWRConfig
-            value={{
-              fetcher,
-            }}
-          >
-            {withLayout(<Component {...pageProps} />, router.query)}
-          </SWRConfig>
-        </StoreProvider>
+        <SWRConfig
+          value={{
+            fetcher,
+          }}
+        >
+          {withLayout(<Component {...pageProps} />, router.query)}
+        </SWRConfig>
       </ThemeProvider>
     </>
   );

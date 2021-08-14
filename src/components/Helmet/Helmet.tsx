@@ -2,8 +2,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 
-import { withoutQuerystring } from '~/helpers/utils/withoutQuerystring';
-
 export type HelmetProps = {
   title?: string;
   description?: string;
@@ -49,10 +47,10 @@ const Helmet: FC<HelmetProps> = ({
       <meta name="twitter:title" content={siteTitle} />
       <meta name="twitter:description" content={descriptionContent} />
       <meta name="twitter:card" content={`/images/${envLargeImage}`} />
-      <link
+      {/* <link
         rel="canonical"
         href={`${router.basePath}${withoutQuerystring(router.asPath)}`}
-      />
+      /> */}
     </Head>
   );
 };

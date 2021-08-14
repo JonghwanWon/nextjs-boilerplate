@@ -1,12 +1,11 @@
 {
   "name": "nextjs-bolierplate",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Jonghwan Won <jh.wwwon@daum.net>",
   "license": "MIT",
   "description": "nextjs bolierplate",
   "keywords": [
     "nextjs",
-    "mobx-state-tree",
     "typescript",
     "styled-components"
   ],
@@ -19,11 +18,8 @@
   },
   "dependencies": {
     "isomorphic-fetch": "^3.0.0",
-    "mobx": "^6.3.2",
-    "mobx-react": "^7.2.0",
-    "mobx-state-tree": "^5.0.1",
-    "nanoid": "^3.1.23",
-    "next": "11.0.0",
+    "nanoid": "^3.1.25",
+    "next": "11.1.0",
     "nprogress": "^0.2.0",
     "polished": "^4.1.3",
     "react": "17.0.2",
@@ -36,8 +32,8 @@
     "@types/isomorphic-fetch": "^0.0.35",
     "@types/node": "^15.6.1",
     "@types/nprogress": "^0.2.0",
-    "@types/react": "^17.0.11",
-    "@types/styled-components": "^5.1.10",
+    "@types/react": "^17.0.17",
+    "@types/styled-components": "^5.1.12",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
     "eslint": "^7.28.0",
