@@ -1,7 +1,5 @@
-import { NextPage } from 'next';
-
-const Page: NextPage = ({}) => {
-  return <div></div>;
+const Page = ({}) => {
+  return <div>Hello World</div>;
 };
 
 export default Page;

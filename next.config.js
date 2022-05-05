@@ -6,4 +6,7 @@ module.exports = {
   reactStrictMode: true,
   trailingSlash: false,
   poweredByHeader: false,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
