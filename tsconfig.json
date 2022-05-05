@@ -23,7 +23,8 @@
         "src/*"
       ]
     },
-    "incremental": true
+    "useUnknownInCatchVariables": true,
+    "incremental": true,
   },
   "include": [
     "next-env.d.ts",

@@ -5,11 +5,3 @@
 # Features
 
 - Typescript
-- styled-components
-- Persistent Layout
-
-```
-~/pages/**/*.tsx
-
-myPage.layout = (page) => <Layout>{page}</Layout>
-```

@@ -2,18 +2,12 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
-import { ThemeProvider } from 'styled-components';
 import { SWRConfig } from 'swr';
 
-import { useNProgress } from '~/components/NProgress';
 import { fetcher } from '~/helpers/fetcher';
-import theme, { GlobalStyle } from '~/theme';
 
 // persistent layout
-type LayoutRenderFunction = (
-  component: ReactNode,
-  query: any,
-) => ReactNode;
+type LayoutRenderFunction = (component: ReactNode, query: any) => ReactNode;
 const DefaultLayout: LayoutRenderFunction = (page) => <>{page}</>;
 
 type MyAppProps = AppProps & {
@@ -23,7 +17,6 @@ type MyAppProps = AppProps & {
 };
 
 const MyApp = ({ Component, pageProps }: MyAppProps) => {
-  useNProgress();
   const router = useRouter();
 
   // persistent layout
@@ -41,16 +34,9 @@ const MyApp = ({ Component, pageProps }: MyAppProps) => {
         />
         <title>{process.env.NEXT_PUBLIC_SEO_SITE_NAME}</title>
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <SWRConfig
-          value={{
-            fetcher,
-          }}
-        >
-          {withLayout(<Component {...pageProps} />, router.query)}
-        </SWRConfig>
-      </ThemeProvider>
+      <SWRConfig value={{ fetcher }}>
+        {withLayout(<Component {...pageProps} />, router.query)}
+      </SWRConfig>
     </>
   );
 };

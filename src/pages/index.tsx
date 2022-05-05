@@ -1,14 +1,7 @@
-import { getGlobalLayout } from '~/components/Layouts/GlobalLayout';
+import { NextPage } from 'next';
 
-const Page: PersistentLayoutNextPage = ({}) => {
+const Page: NextPage = ({}) => {
   return <div></div>;
 };
-
-Page.layout = (page) =>
-  getGlobalLayout(page, {
-    helmet: {
-      title: 'Home',
-    },
-  });
 
 export default Page;
