@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-export const fetcher = async <Response extends unknown>(
+export const fetcher = async <Response>(
   url: string,
   init?: RequestInit,
 ): Promise<Response> => {

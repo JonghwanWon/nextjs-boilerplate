@@ -16,18 +16,5 @@ module.exports = (api) => {
         },
       ],
     ],
-    plugins: [
-      [
-        'styled-components',
-        {
-          ssr: true,
-          displayName: isProd ? false : true,
-          fileName: isProd ? false : true,
-          pure: true,
-          minify: isProd ? true : false,
-          transpileTemplateLiterals: false,
-        },
-      ],
-    ],
   };
 };
