@@ -1,6 +1,6 @@
 # Next.js Boilerplate 🚀
 
-#### Next.js + Typescript + styled-components
+#### Next.js + Typescript
 
 # Features
 
