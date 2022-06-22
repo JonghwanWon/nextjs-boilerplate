@@ -1,2 +1,2 @@
-export type { RouteLinkProps } from './ExtraLink';
-export { default } from './ExtraLink';
+export type { ExtraLinkProps } from './ExtraLink';
+export { ExtraLink } from './ExtraLink';

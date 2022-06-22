@@ -1,15 +1,36 @@
-import Link, { LinkProps as NextLinkProps } from 'next/link';
-import { PropsWithChildren } from 'react';
+import { ComponentProps, PropsWithChildren } from 'react';
 
-export type RouteLinkProps = NextLinkProps;
+import Link, { type LinkProps } from 'next/link';
 
-const RouteLink = ({
+type ATagProps = Omit<ComponentProps<'a'>, 'href'>;
+export type ExtraLinkProps = LinkProps & ATagProps;
+
+export const ExtraLink = ({
   children,
-  ...props
-}: PropsWithChildren<RouteLinkProps>) => (
-  <Link {...props}>
-    <a>{children}</a>
-  </Link>
-);
+  href,
+  as,
+  replace,
+  scroll,
+  shallow,
+  passHref = true,
+  prefetch,
+  locale,
+  ...aTagProps
+}: PropsWithChildren<ExtraLinkProps>) => {
+  const linkProps = {
+    href,
+    as,
+    replace,
+    scroll,
+    shallow,
+    passHref,
+    prefetch,
+    locale,
+  };
 
-export default RouteLink;
+  return (
+    <Link {...linkProps}>
+      <a {...aTagProps}>{children}</a>
+    </Link>
+  );
+};
