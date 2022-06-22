@@ -1,7 +1,4 @@
 module.exports = {
-  async redirects() {
-    return [];
-  },
   generateEtags: true,
   reactStrictMode: true,
   trailingSlash: false,
