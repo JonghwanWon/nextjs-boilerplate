@@ -1,7 +1,9 @@
 const Page = () => {
+  const test = 'Hello World';
+
   return (
     <div>
-      <h1 className="text-4xl text-blue-700">Hello World</h1>
+      <h1 className="text-4xl text-blue-700">{test}</h1>
     </div>
   );
 };
